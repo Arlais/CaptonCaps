@@ -1,0 +1,15 @@
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/bin/Debug/net10.0/CartonCaps.Application.deps.json
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/bin/Debug/net10.0/CartonCaps.Application.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/bin/Debug/net10.0/CartonCaps.Application.pdb
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/bin/Debug/net10.0/CartonCaps.Domain.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/bin/Debug/net10.0/CartonCaps.Domain.pdb
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCaps.Application.csproj.AssemblyReference.cache
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCaps.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCaps.Application.AssemblyInfoInputs.cache
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCaps.Application.AssemblyInfo.cs
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCaps.Application.csproj.CoreCompileInputs.cache
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCa.0E67BF70.Up2Date
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCaps.Application.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/refint/CartonCaps.Application.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCaps.Application.pdb
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/ref/CartonCaps.Application.dll

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CartonCaps.Api/CartonCaps.Api.csproj" />
+  <Project Path="CartonCaps.Application/CartonCaps.Application.csproj" />
+  <Project Path="CartonCaps.Domain/CartonCaps.Domain.csproj" />
+  <Project Path="CartonCaps.Infrastructure/CartonCaps.Infrastructure.csproj" />
+</Solution>

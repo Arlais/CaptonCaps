@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "CartonCaps.Application/1.0.0": {
+        "dependencies": {
+          "CartonCaps.Domain": "1.0.0"
+        },
+        "runtime": {
+          "CartonCaps.Application.dll": {}
+        }
+      },
+      "CartonCaps.Domain/1.0.0": {
+        "runtime": {
+          "CartonCaps.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CartonCaps.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CartonCaps.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

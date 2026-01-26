@@ -1,0 +1,17 @@
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/bin/Debug/net10.0/CartonCaps.Infrastructure.deps.json
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/bin/Debug/net10.0/CartonCaps.Infrastructure.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/bin/Debug/net10.0/CartonCaps.Infrastructure.pdb
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/bin/Debug/net10.0/CartonCaps.Application.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/bin/Debug/net10.0/CartonCaps.Domain.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/bin/Debug/net10.0/CartonCaps.Application.pdb
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/bin/Debug/net10.0/CartonCaps.Domain.pdb
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/obj/Debug/net10.0/CartonCaps.Infrastructure.csproj.AssemblyReference.cache
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/obj/Debug/net10.0/CartonCaps.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/obj/Debug/net10.0/CartonCaps.Infrastructure.AssemblyInfoInputs.cache
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/obj/Debug/net10.0/CartonCaps.Infrastructure.AssemblyInfo.cs
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/obj/Debug/net10.0/CartonCaps.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/obj/Debug/net10.0/CartonCa.B8C9A140.Up2Date
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/obj/Debug/net10.0/CartonCaps.Infrastructure.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/obj/Debug/net10.0/refint/CartonCaps.Infrastructure.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/obj/Debug/net10.0/CartonCaps.Infrastructure.pdb
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Infrastructure/obj/Debug/net10.0/ref/CartonCaps.Infrastructure.dll

@@ -1,0 +1,11 @@
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Domain/bin/Debug/net10.0/CartonCaps.Domain.deps.json
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Domain/bin/Debug/net10.0/CartonCaps.Domain.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Domain/bin/Debug/net10.0/CartonCaps.Domain.pdb
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Domain/obj/Debug/net10.0/CartonCaps.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Domain/obj/Debug/net10.0/CartonCaps.Domain.AssemblyInfoInputs.cache
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Domain/obj/Debug/net10.0/CartonCaps.Domain.AssemblyInfo.cs
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Domain/obj/Debug/net10.0/CartonCaps.Domain.csproj.CoreCompileInputs.cache
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Domain/obj/Debug/net10.0/CartonCaps.Domain.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Domain/obj/Debug/net10.0/refint/CartonCaps.Domain.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Domain/obj/Debug/net10.0/CartonCaps.Domain.pdb
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Domain/obj/Debug/net10.0/ref/CartonCaps.Domain.dll
