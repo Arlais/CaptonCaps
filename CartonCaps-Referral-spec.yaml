@@ -1,0 +1,288 @@
+openapi: 3.1.0
+info:
+  title: Carton Caps Referral Service API
+  version: 1.0.0
+  description: API for generating shareable referral links and handling the 'deferred' 
+    attribution process to customize onboarding for new users after app install.
+
+tags:
+  - name: Referrals
+    description: Referral link generation and management
+
+components:
+
+  schemas:
+    ReferralLinkDto:
+      type: object
+      required: [referralCode, shortUrl, expiresAt, createdAt, userId]
+      properties:
+        referralCode:
+          type: string
+          example: "FRIEND2026"
+        shortUrl:
+          type: string
+          format: uri
+          example: "https://myapp.link/CartonCaps2026"
+        expiresAt:
+          type: string
+          format: date-time
+          example: "2026-02-28T23:59:59Z"
+        createdAt:
+          type: string
+          format: date-time
+          example: "2026-01-28T10:30:00Z"
+        userId:
+          type: string
+          format: uuid
+          example: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        userName:
+          type: string
+          example: "Alex"
+
+    AttributionRequest:
+      type: object
+      required: [deviceId, referralCode, os]
+      properties:
+        deviceId:
+          type: string
+          description: "Unique hardware ID (IDFV/GAID) to identify the install."
+          example: "ABC123-DEF456-GHI789"
+        referralCode:
+          type: string
+          minLength: 5
+          maxLength: 20
+          example: "CartonCaps2026"
+        os:
+          type: string
+          enum: [ios, android]
+          description: "Mobile operating system platform."
+          example: "ios"
+
+    AttributionResponse:
+      type: object
+      required: [token]
+      properties:
+        deviceId:
+          type: string
+          example: "ABC123-DEF456-GHI789"
+        referralCode:
+          type: string
+          example: "CartonCaps2026"
+        token:
+          type: string
+          description: "Secure attribution token to pass to /claim after signup."
+          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        attributedAt:
+          type: string
+          format: date-time
+          example: "2026-01-28T10:35:00Z"
+        expiresAt:
+          type: string
+          format: date-time
+          example: "2026-01-29T10:35:00Z"
+
+    ClaimRequest:
+      type: object
+      required: [attributionToken]
+      properties:
+        userId:
+          type: string
+          description: "User ID of the newly registered user."
+          example: "user-12345"
+        attributionToken:
+          type: string
+          description: "Token received from the /attribute endpoint."
+          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        deviceId:
+          type: string
+          description: "Optional device identifier for additional validation."
+          example: "ABC123-DEF456-GHI789"
+
+    ClaimResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        message:
+          type: string
+          example: "Reward processed successfully."
+        referralCode:
+          type: string
+          example: "CartonCaps2026"
+
+    ReferralStatusResponse:
+      type: object
+      properties:
+        inviteeName:
+          type: string
+          example: "John D."
+          description: "Name of the person referred"
+        status:
+          type: string
+          enum: [pending, completed, rewarded]
+          example: "completed"
+        dateJoined:
+          type: string
+          format: date
+          example: "2026-01-25"
+        rewardIssued:
+          type: boolean
+          example: true
+          description: "Whether the reward has been issued for this referral."
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "An unexpected error occurred"
+        message:
+          type: string
+          example: "Referral code not found or expired."
+
+paths:
+  /referrals/new-link:
+    get:
+      tags:
+        - Referrals
+      summary: Generate a shareable deep link
+      description: >
+        Creates a unique referral link that can be shared by existing users to invite new users.
+        It connects to third-party vendor for deferred deep link support.
+      operationId: CreateReferralLink
+      parameters:
+        - name: campaign
+          in: query
+          required: false
+          description: "Optional marketing channel or source (e.g., twitter, whatsapp)."
+          schema:
+            type: string
+            maxLength: 50
+            example: "whatsapp_promo"
+      responses:
+        '201':
+          description: Referral link created successfully.
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/ReferralLinkDto'
+        '400':
+          description: Bad Request - Failed to generate referral link.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized - User must be logged in to refer others.
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /referrals/attribute:
+    post:
+      tags:
+        - Referrals
+      summary: Match a new installation to the referral code
+      description: >
+        Pairs the device fingerprint with a referral code found in the deep link.
+        This endpoint enables deferred deep linking attribution.
+      operationId: MatchDeviceToReferral
+      security: []  # This endpoint does not require authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AttributionRequest'
+      responses:
+        '200':
+          description: Device successfully attributed to referral.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttributionResponse'
+        '404':
+          description: Not Found - Referral code is invalid or expired.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /referrals/claim:
+    post:
+      tags:
+        - Referrals
+      summary: Finalize the referral and issue rewards
+      description: >
+        Called after the new user successfully completes registration.
+        Finalizes the referral process and triggers reward distribution.
+        Moves the status from 'Pending' to 'Claimed'.
+      operationId: ClaimReferral
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClaimRequest'
+      responses:
+        '200':
+          description: Reward processed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClaimResponse'
+        '409':
+          description: Conflict - User has already claimed a referral or invalid token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /referrals/my-referrals:
+    get:
+      tags:
+        - Referrals
+      summary: Get a list of users I have referred and their current status
+      description: Retrieves all referrals made by the authenticated user with optional status filtering.
+      operationId: GetMyReferrals
+      parameters:
+        - name: status
+          in: query
+          required: false
+          description: Filter by referral status (e.g., pending, completed, rewarded)
+          schema:
+            type: string
+            enum: [pending, completed, rewarded]
+      responses:
+        '200':
+          description: A list of referrals associated with the authenticated user.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReferralStatusResponse'
+        '401':
+          description: Unauthorized - User not authenticated.
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'

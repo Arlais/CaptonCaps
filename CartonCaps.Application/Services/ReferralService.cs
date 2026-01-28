@@ -108,7 +108,7 @@ public class ReferralService : IReferralService
         var response = new ClaimResponse
         {
             Success = true,
-            Message = $"Referral bonus claimed! You and {validationResult.Value.Link.UserName} both received rewards.",
+            Message = $"Referral bonus claimed! You and referral both received rewards.",
             ReferralCode = validationResult.Value.Attribution.ReferralCode
         };
 
@@ -196,8 +196,7 @@ public class ReferralService : IReferralService
             shortUrl,
             DateTime.UtcNow.AddMonths(6),
             DateTime.UtcNow,
-            userId.ToString(),
-            $"User_{userId.ToString().Substring(0, 8)}"
+            userId.ToString()
         );
     }
 

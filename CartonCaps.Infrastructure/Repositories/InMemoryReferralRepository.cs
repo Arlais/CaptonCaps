@@ -73,11 +73,10 @@ public class InMemoryReferralRepository : IInMemoryReferralRepository
         _referralLinks.TryAdd("CARTON_2026", new MockReferralLink
         {
             ReferralCode = "CARTON_2026",
-            UserId = "user-123",
-            UserName = "TestUser",
             ShortUrl = "https://cartoncaps.com/r/CARTON_2026",
             CreatedAt = DateTime.UtcNow.AddDays(-5),
-            ExpiresAt = DateTime.UtcNow.AddMonths(6)
+            ExpiresAt = DateTime.UtcNow.AddMonths(6),
+            UserId = "user-123"
         });
     }
 
@@ -86,11 +85,10 @@ public class InMemoryReferralRepository : IInMemoryReferralRepository
         if (mock == null) return null;
         return new ReferralLinkDto(
             mock.ReferralCode,
-            mock.UserId,
+            mock.ShortUrl,
             mock.ExpiresAt,
             mock.CreatedAt,
-            mock.UserName,
-            mock.ShortUrl
+            mock.UserId
         );
     }
 
@@ -99,11 +97,10 @@ public class InMemoryReferralRepository : IInMemoryReferralRepository
         return new MockReferralLink
         {
             ReferralCode = dto.ReferralCode,
-            UserId = dto.UserId,
+            ShortUrl = dto.ShortUrl,
             CreatedAt = dto.CreatedAt,
             ExpiresAt = dto.ExpiresAt,
-            UserName = dto.UserName,
-            ShortUrl = dto.ShortUrl
+            UserId = dto.UserId
         };
     }
 

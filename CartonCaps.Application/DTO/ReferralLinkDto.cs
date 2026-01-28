@@ -8,6 +8,5 @@ public record ReferralLinkDto(
     string ShortUrl, 
     DateTime ExpiresAt,
     DateTime CreatedAt,
-    string UserId,
-    string UserName
+    string UserId
 );

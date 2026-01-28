@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CartonCaps.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5cbfa04e8d0781189df0c59666804547811ea63d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+584b8394f3bc101a70e14cf36fdaaf8029bba4e7")]
 [assembly: System.Reflection.AssemblyProductAttribute("CartonCaps.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CartonCaps.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
