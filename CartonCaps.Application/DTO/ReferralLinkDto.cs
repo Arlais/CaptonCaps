@@ -6,5 +6,8 @@ namespace CartonCaps.Application.DTO;
 public record ReferralLinkDto(
     string ReferralCode, 
     string ShortUrl, 
-    DateTime ExpiryDate
+    DateTime ExpiresAt,
+    DateTime CreatedAt,
+    string UserId,
+    string UserName
 );

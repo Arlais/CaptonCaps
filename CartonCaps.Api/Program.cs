@@ -1,73 +1,74 @@
-using Microsoft.AspNetCore.Mvc;
 using CartonCaps.Application.Common.Interfaces;
 using CartonCaps.Application.Services;
-using CartonCaps.Application.DTO;
+using CartonCaps.Api.Middleware;
+using CartonCaps.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddScoped<IReferralService, ReferralService>();
 
+// Add services to the container
+builder.Services.AddScoped<IReferralService, ReferralService>();
+builder.Services.AddScoped<IInMemoryReferralRepository, InMemoryReferralRepository>();
+builder.Services.AddControllers();
+
+// Add API documentation
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new() 
+    {
+        Title = "CartonCaps Referral Service API",
+        Version = "v1.0.0",
+        Description = "API for generating shareable referral links and handling deferred attribution for mobile app referrals."
+    });
+
+    // Include XML comments for better documentation
+    var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    if (File.Exists(xmlPath))
+    {
+        options.IncludeXmlComments(xmlPath);
+    }
+});
 builder.Services.AddOpenApi();
+
+// Add exception handling
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
+
+// Configure logging
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
+
+// Add CORS if needed
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowMobileApps", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();    
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "CartonCaps API v1");
+        options.RoutePrefix = "swagger"; // Serve Swagger UI at root
+    });
+    app.MapOpenApi();
 }
 
-app.MapGet("/referrals/new-link", async (
-    [FromQuery] string? campaign, 
-    IReferralService referralService) =>
-{
-    // Craft: We simulate the User ID usually found in the JWT/ClaimsPrincipal
-    var mockUserId = Guid.NewGuid(); 
-    
-    var result = await referralService.CreateReferralLinkAsync(mockUserId, campaign);
-
-    return result.IsSuccess 
-        ? Results.Created($"/referrals/{result.Value!.ReferralCode}", result.Value)
-        : Results.BadRequest(new { error = result.Error });
-})
-.WithName("GetUserReferralLink");
-
-app.MapPost("/referrals/attribute", async ([FromBody] AttributionRequest request,
-IReferralService service) =>
-{
-    var result = await service.MatchDeviceAsync(request);
-    if (request.ReferralCode == "|")
-    {
-        return result.IsSuccess ?
-        Results.Ok(result.Value) : Results.BadRequest(new { error = result.Error });
-    }
-
-    return Results.NotFound(new { message = "Referral code is invalid or expired." });
-})
-.WithName("MatchDeviceToReferral");
-
-app.MapPost("/referrals/claim", ([FromBody] ClaimRequest request) =>
-{
-    if (request.AttributionToken == "secure_b64_encoded_handshake_token")
-    {
-        return Results.Ok(new { message = "Reward processed successfully." });
-    }
-    
-    return Results.Conflict(new { message = "Invalid token or reward already claimed." });
-})
-.WithName("ClaimReferral");
-
-app.MapGet("/referrals/my-referrals", () =>
-{
-    return Results.Ok(new[] {
-        new { inviteeName = "John D.", status = "completed", dateJoined = "2026-01-20", rewardIssued = true },
-        new { inviteeName = "Sarah W.", status = "pending", dateJoined = "2026-01-25", rewardIssued = false }
-    });
-})
-.WithName("GetMyReferrals");
+app.UseExceptionHandler();
+app.UseCors("AllowMobileApps");
+app.UseCorrelationId();
+app.MapControllers();
 
 app.Run();
 

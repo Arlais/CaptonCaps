@@ -431,3 +431,9 @@
 /Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Tests/obj/Debug/net10.0/CartonCaps.Tests.pdb
 /Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Tests/obj/Debug/net10.0/CartonCaps.Tests.genruntimeconfig.cache
 /Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Tests/obj/Debug/net10.0/ref/CartonCaps.Tests.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Tests/obj/Debug/net10.0/CartonCaps.Tests.sourcelink.json
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Tests/bin/Debug/net10.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Tests/bin/Debug/net10.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Tests/bin/Debug/net10.0/Microsoft.IdentityModel.Logging.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Tests/bin/Debug/net10.0/Microsoft.IdentityModel.Tokens.dll
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Tests/bin/Debug/net10.0/System.IdentityModel.Tokens.Jwt.dll

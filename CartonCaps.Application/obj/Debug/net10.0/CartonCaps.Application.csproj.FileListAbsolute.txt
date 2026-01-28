@@ -8,6 +8,7 @@
 /Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCaps.Application.AssemblyInfoInputs.cache
 /Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCaps.Application.AssemblyInfo.cs
 /Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCaps.Application.csproj.CoreCompileInputs.cache
+/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCaps.Application.sourcelink.json
 /Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCa.0E67BF70.Up2Date
 /Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/CartonCaps.Application.dll
 /Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Application/obj/Debug/net10.0/refint/CartonCaps.Application.dll

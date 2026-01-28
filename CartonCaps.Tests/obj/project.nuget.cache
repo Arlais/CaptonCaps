@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xrqX0aD7g2A=",
+  "dgSpecHash": "u/VVFImyK4M=",
   "success": true,
   "projectFilePath": "/Users/jonathan.pulido/Downloads/CartonCaps/CartonCaps.Tests/CartonCaps.Tests.csproj",
   "expectedPackageFiles": [
@@ -40,6 +40,10 @@
     "/Users/jonathan.pulido/.nuget/packages/microsoft.extensions.options/10.0.2/microsoft.extensions.options.10.0.2.nupkg.sha512",
     "/Users/jonathan.pulido/.nuget/packages/microsoft.extensions.options.configurationextensions/10.0.2/microsoft.extensions.options.configurationextensions.10.0.2.nupkg.sha512",
     "/Users/jonathan.pulido/.nuget/packages/microsoft.extensions.primitives/10.0.2/microsoft.extensions.primitives.10.0.2.nupkg.sha512",
+    "/Users/jonathan.pulido/.nuget/packages/microsoft.identitymodel.abstractions/8.15.0/microsoft.identitymodel.abstractions.8.15.0.nupkg.sha512",
+    "/Users/jonathan.pulido/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.15.0/microsoft.identitymodel.jsonwebtokens.8.15.0.nupkg.sha512",
+    "/Users/jonathan.pulido/.nuget/packages/microsoft.identitymodel.logging/8.15.0/microsoft.identitymodel.logging.8.15.0.nupkg.sha512",
+    "/Users/jonathan.pulido/.nuget/packages/microsoft.identitymodel.tokens/8.15.0/microsoft.identitymodel.tokens.8.15.0.nupkg.sha512",
     "/Users/jonathan.pulido/.nuget/packages/microsoft.net.test.sdk/17.14.1/microsoft.net.test.sdk.17.14.1.nupkg.sha512",
     "/Users/jonathan.pulido/.nuget/packages/microsoft.openapi/2.3.0/microsoft.openapi.2.3.0.nupkg.sha512",
     "/Users/jonathan.pulido/.nuget/packages/microsoft.testplatform.objectmodel/17.14.1/microsoft.testplatform.objectmodel.17.14.1.nupkg.sha512",
@@ -51,6 +55,7 @@
     "/Users/jonathan.pulido/.nuget/packages/swashbuckle.aspnetcore.swaggergen/10.1.0/swashbuckle.aspnetcore.swaggergen.10.1.0.nupkg.sha512",
     "/Users/jonathan.pulido/.nuget/packages/swashbuckle.aspnetcore.swaggerui/10.1.0/swashbuckle.aspnetcore.swaggerui.10.1.0.nupkg.sha512",
     "/Users/jonathan.pulido/.nuget/packages/system.diagnostics.eventlog/10.0.2/system.diagnostics.eventlog.10.0.2.nupkg.sha512",
+    "/Users/jonathan.pulido/.nuget/packages/system.identitymodel.tokens.jwt/8.15.0/system.identitymodel.tokens.jwt.8.15.0.nupkg.sha512",
     "/Users/jonathan.pulido/.nuget/packages/xunit/2.9.3/xunit.2.9.3.nupkg.sha512",
     "/Users/jonathan.pulido/.nuget/packages/xunit.abstractions/2.0.3/xunit.abstractions.2.0.3.nupkg.sha512",
     "/Users/jonathan.pulido/.nuget/packages/xunit.analyzers/1.18.0/xunit.analyzers.1.18.0.nupkg.sha512",
